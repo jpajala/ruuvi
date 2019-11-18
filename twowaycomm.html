@@ -46,9 +46,9 @@
             // Now tell it to write data on the current light level to Bluetooth
             // 10 times a second. Also ensure that when disconnected, Puck.js
             // resets so the setInterval doesn't keep draining battery.
-            connection.write("function logxyz(xyz){if(xyz.new){Bluetooth.println(' '+xyz.x+' '+xyz.y+' '+ xyz.z);}}Ruuvitag.setEnvOn(false);Ruuvitag.setAccelOn(true, logxyz);Ruuvitag.accel.setPowerMode('normal');",
+            connection.write("function logxyz(xyz){if(xyz.new){Bluetooth.println(' '+xyz.x+' '+xyz.y+' '+ xyz.z);}}RuuviTag.setEnvOn(false);RuuviTag.setAccelOn(true, logxyz);RuuviTag.accel.setPowerMode('normal');",
               function() { console.log("Ready..."); });
-          }, 1500);
+          }, 2000);
         });
       });
     });
