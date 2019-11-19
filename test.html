@@ -5,16 +5,30 @@
   <a id="myAnchor">ankkuri</a>
   <script src="https://www.puck-js.com/puck.js"></script>
   <script>
-  // var a = [];
-   function aaa()
+   var strToSave = "";
+   var data = 0;
+   function aaa(save)
    {
-     var a = document.getElementById("myAnchor");
-    a.download = "downloadname.txt";
-    a.click();
+    if(save == true)
+    {
+     var element = document.createElement('a');
+     element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(strToSave));
+     element.setAttribute('download', "jussinfile.txt");
+     element.style.display = 'none';
+     document.body.appendChild(element);
+     element.click();
+     document.body.removeChild(element);
+    }
+    else
+    {
+      data++;
+      strToSave += data;
+    }
    }
   </script>
   <button onclick="Puck.write('LED1.set();\n');">On!</button>
   <button onclick="Puck.write('LED1.reset();\n');">Off!</button>
-  <button onclick="aaa()">download</button>
+  <button onclick="aaa(false)">more data</button>
+  <button onclick="aaa(true)">save</button>
  </body>
 </html>
