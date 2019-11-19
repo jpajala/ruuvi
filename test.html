@@ -5,16 +5,16 @@
   <a id="myAnchor">ankkuri</a>
   <script src="https://www.puck-js.com/puck.js"></script>
   <script>
-   var a = [];
+  // var a = [];
    function aaa()
    {
-    
+     var a = document.getElementById("myAnchor");
     a.download = "downloadname.txt";
     a.click();
    }
   </script>
   <button onclick="Puck.write('LED1.set();\n');">On!</button>
   <button onclick="Puck.write('LED1.reset();\n');">Off!</button>
-  <button onclick="document.getElementById("myAnchor").download=true;document.getElementById("myAnchor").click();">download</button>
+  <button onclick="aaa()">download</button>
  </body>
 </html>
